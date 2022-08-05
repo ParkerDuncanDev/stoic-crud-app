@@ -1,6 +1,5 @@
 //dependencies and global variables 
 const express = require('express')
-const bodyParser = require('body-parser')
 const MongoClient = require('mongodb').MongoClient
 const app = express()
 require('dotenv').config()
@@ -17,13 +16,9 @@ MongoClient.connect(dbConnectionStr, { useUnifiedTopology:true })
 app.set('view engine', 'ejs')
 //middleware
 app.use("/public", express.static(__dirname + '/public'));
-app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.json())
-
+app.use(express.urlencoded({ extended: true }))
     
-
-
-
 //routes
 app.get('/', (req,res) => {
     db.collection('quotes').find().toArray()
@@ -71,14 +66,6 @@ app.delete('/deletequote', (req,res) => {
     })
     .catch(error => console.error(error))
 })
-
-
-
-
-
-
-
-
 
 let port = process.env.PORT;
 if (port == null || port == "") {
