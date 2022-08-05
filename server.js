@@ -2,7 +2,6 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const MongoClient = require('mongodb').MongoClient
-const PORT = 4444
 const app = express()
 require('dotenv').config()
 
@@ -81,6 +80,8 @@ app.delete('/deletequote', (req,res) => {
 
 
 
-app.listen(process.env.PORT || PORT, function() {
-    console.log(`listening on ${PORT}`)
-  })
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 8000;
+}
+app.listen(port);
