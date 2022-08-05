@@ -5,6 +5,12 @@ const MongoClient = require('mongodb').MongoClient
 const app = express()
 require('dotenv').config()
 
+MongoClient.connect(dbConnectionStr, { useUnifiedTopology:true })
+    .then(client => {
+        console.log(`connected to ${dbName}`)
+        db = client.db(dbName)
+    })
+    .catch(error => console.error(error))
 app.set('view engine', 'ejs')
 //middleware
 app.use("/public", express.static(__dirname + '/public'));
@@ -16,12 +22,6 @@ let db,
     dbName = 'StoicQuotes'
     
 
-MongoClient.connect(dbConnectionStr, { useUnifiedTopology:true })
-    .then(client => {
-        console.log(`connected to ${dbName}`)
-        db = client.db(dbName)
-    })
-    .catch(error => console.error(error))
 
 
 //routes
