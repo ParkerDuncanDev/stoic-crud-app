@@ -4,6 +4,9 @@ const bodyParser = require('body-parser')
 const MongoClient = require('mongodb').MongoClient
 const app = express()
 require('dotenv').config()
+let db,   
+    dbConnectionStr = process.env.DB_STRING,
+    dbName = 'StoicQuotes'
 
 MongoClient.connect(dbConnectionStr, { useUnifiedTopology:true })
     .then(client => {
@@ -17,9 +20,6 @@ app.use("/public", express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.json())
 
-let db,   
-    dbConnectionStr = process.env.DB_STRING,
-    dbName = 'StoicQuotes'
     
 
 
