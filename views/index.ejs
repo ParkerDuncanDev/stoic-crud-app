@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,400;0,8..144,700;1,8..144,400&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a8fb60c01e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/public/style.css">
     <title>Document</title>
 </head>
 <body>
@@ -14,22 +18,25 @@
     <ul class="quotes">
         <% for( let i = 0; i < quotes.length; i++ ) { %>
         <li class="quote">
-            <span><%= quotes[i].name %></span>
-            <span><%= quotes[i].quote %></span>
+            <span class="name"><%= quotes[i].name %></span>
+            <br>
+            <span class="quote"><%= quotes[i].quote %></span>
             <i class="fa-regular fa-thumbs-up"></i>
-            <span id="likes"><%= quotes[i].likes %> </span>
+            <span class="likes"><%= quotes[i].likes %> </span>
             <i class="fa-regular fa-trash-can"></i>
         </li>
         <% } %>
     </ul>
 
-    <h2>Submit New Quote</h2>
+    <h2>Leave a quote</h2>
     
     <form action="/quotes" method="POST">
         <input type="text" placeholder="name" name="name">
         <input type="text" placeholder="quote" name="quote">
-        <button type="submit">submit</button>
+        <button type="submit"
+        class="css-button-sliding-to-top--black">submit</button>
     </form>
     <script src="/public/main.js"></script>
 </body>
 </html>
+
