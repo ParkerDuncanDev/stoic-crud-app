@@ -12,11 +12,12 @@ Array.from(deleteButton).forEach((element) => {
 
 async function addLike(){
     const nameText = this.parentNode.childNodes[1].innerText
-
-    const quoteText = this.parentNode.childNodes[3].innerText
+    
+    const quoteText = this.parentNode.childNodes[5].innerText
  
-    const tLikes = (Number(this.parentNode.childNodes[7].innerText)) + 1
- 
+    const tLikes = (Number(this.parentNode.childNodes[11].innerText)) + 1
+    // console.log(nameText, quoteText, tLikes)
+    // console.log(this.parentNode.childNodes)
     console.log(JSON.stringify({
         name: nameText,
         quote: quoteText,
