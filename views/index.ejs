@@ -8,36 +8,38 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,400;0,8..144,700;1,8..144,400&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a8fb60c01e.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/public/style.css">
+    <link type="text/css" rel="stylesheet" href="/public/css/materialize.css"  media="screen,projection"/>
     <title>Document</title>
 </head>
-<body>
+<body class="black">
 
-    <h2>Quotes</h2>
-
-    <ul class="quotes">
-        <% for( let i = 0; i < quotes.length; i++ ) { %>
-        <li class="quote">
-            <span class="name"><%= quotes[i].name %></span>
-            <br>
-            <span class="quote"><%= quotes[i].quote %></span>
-            <br>
-            <i class="fa-regular fa-thumbs-up"></i>
-            <span class="likes"><%= quotes[i].likes %> </span>
-            <i class="fa-regular fa-trash-can"></i>
-        </li>
-        <% } %>
-    </ul>
-
-    <h2>Leave a quote</h2>
-    
-    <form action="/quotes" method="POST">
-        <input type="text" placeholder="name" name="name">
-        <input type="text" placeholder="quote" name="quote">
-        <button type="submit"
-        class="css-button-sliding-to-top--black">submit</button>
-    </form>
-    <script src="/public/main.js"></script>
+    <div class="container">
+        <h2 class="white-text">Words of wisdom</h2>
+            <ul class="quotes">
+                <% for( let i = 0; i < quotes.length; i++ ) { %>
+                <li class="quote card grey darken-4">
+                    <span class="name white-text"><%= quotes[i].name %></span>
+                    <br>
+                    <span class="quote white-text"><%= quotes[i].quote %></span>
+                    <br>
+                    <i class="fa-regular fa-thumbs-up white-text"></i>
+                    <span class="likes white-text"><%= quotes[i].likes %> </span>
+                    <i class="fa-regular fa-trash-can white-text"></i>
+                </li>
+                <% } %>
+            </ul>
+            <h2 class="white-text">Leave a quote</h2>
+            <div class="input-field">
+                <form action="/quotes" method="POST">
+                    <input type="text" placeholder="name" name="name" class="white-text">
+                    <input type="text" placeholder="quote" name="quote" class="white-text">
+                    <button type="submit"
+                    class="css-button-sliding-to-top--black">submit</button>
+                </form>
+            </div>
+        </div>
+            <script src="/public/js/main.js"></script>
+    <script type="text/javascript" src="/public/js/materialize.min.js"></script>
 </body>
 </html>
 

@@ -48,7 +48,7 @@ async function addLike(){
 async function deleteQuote(){
     const nameText = this.parentNode.childNodes[1].innerText
     
-    const quoteText = this.parentNode.childNodes[3].innerText
+    const quoteText = this.parentNode.childNodes[5].innerText
     console.log('deleting ' +nameText + quoteText)
 
     try{
