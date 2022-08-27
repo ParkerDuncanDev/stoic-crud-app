@@ -3,6 +3,8 @@ This was an early CRUD exercise that I used to test out the Materialize CSS fram
 
 **Link to project:** https://stoic-quote-board.herokuapp.com
 
+[![Image from Gyazo](https://i.gyazo.com/bdab8a70fb1e5241c62aef5ddec4d9d7.gif)](https://gyazo.com/bdab8a70fb1e5241c62aef5ddec4d9d7)
+
 
 ## How It's Made:
 
